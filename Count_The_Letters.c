@@ -13,9 +13,9 @@ typedef void* (*fun)(void*);
 #define FILEPATH "all_is_well.txt"
 #define M 1
 #define R 1
-static pthread_mutex_t mutex[100] = {PTHREAD_MUTEX_INITIALIZER};
-static pthread_cond_t mapper_over[50] = {PTHREAD_COND_INITIALIZER};
-static pthread_cond_t reducer_over[50] = {PTHREAD_COND_INITIALIZER};
+static pthread_mutex_t mutex[M+R] = {PTHREAD_MUTEX_INITIALIZER};
+static pthread_cond_t mapper_over[M] = {PTHREAD_COND_INITIALIZER};
+static pthread_cond_t reducer_over[R] = {PTHREAD_COND_INITIALIZER};
 int M=1;
 int R=1;
 void* InputThread(void * arg);
